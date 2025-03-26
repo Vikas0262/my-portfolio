@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    font-family: "Poppins", sans-serif;
+    /* font-family: "Inter", sans-serif; */
+}
+
+body{
+    /* background: linear-gradient(135deg, #f9fafc, #e3e8f0); */
+}
+html {
+    scroll-behavior: smooth;
+  }
