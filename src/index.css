@@ -9,6 +9,8 @@
 
 body{
     /* background: linear-gradient(135deg, #f9fafc, #e3e8f0); */
+  /* background: linear-gradient(to right, #F7F1F1, #EAEAEA);  */
+  background: linear-gradient(to right, #1f1f1f, #2b2b2b); 
 }
 html {
     scroll-behavior: smooth;
