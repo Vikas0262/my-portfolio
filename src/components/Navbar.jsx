@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 
 function Navbar() {
@@ -8,6 +8,40 @@ function Navbar() {
   // Function to handle toggle state change
   const handletoggle = () => {
     settoggle(!toggle);
+  };
+
+  // State to manage scroll position
+  const [scrolled, setScrolled] = useState(false);
+
+
+  // Effect to handle scroll events
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Function to handle smooth scrolling
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    const offset = 80; // Adjust this value based on your navbar height
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+
+    // Close mobile menu if open
+    if (toggle) {
+      settoggle(true);
+    }
   };
 
   return (
@@ -20,7 +54,7 @@ function Navbar() {
         >
           {/* Navigation Links */}
           <ul className="flex-row hidden gap-16 px-4 font-light md:flex text-slate-100 font-fira">
-            <a href="#Home">
+          <a href="#Home" onClick={(e) => handleScroll(e, 'Home')}>
               <li className="transition-all cursor-pointer">{"<Home/>"}</li>
             </a>
             <a href="#About">
@@ -34,6 +68,7 @@ function Navbar() {
             </a>
           </ul>
 
+         
           {/* Mobile Menu Toggle Button */}
           <div id="menuToggle" className="scale-75 md:hidden">
             <input id="checkbox" type="checkbox" onClick={handletoggle} />
