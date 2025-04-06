@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from "../components/Navbar.jsx"
 import Hero from "../components/Hero.jsx"
-// import Skills from '../components/Skills.jsx'
-// import ProjectsSection from '../components/ProjectsSection.jsx'
+import Skills from '../components/Skills.jsx'
+import ProjectsSection from '../components/Projects.jsx'
+import Certifications from '../components/Certifications.jsx'
 // import AboutSection from '../components/AboutSection.jsx'
-// import Certifications from '../components/Certifications.jsx'
-// import ContactSection from '../components/ContactSection.jsx'
-// import Footer from '../components/Footer.jsx'
+import ContactSection from '../components/ContactSection.jsx'
+import Footer from '../components/Footer.jsx'
 // import ThemeToggle from '../components/ThemeToggle.jsx'
 
 function Home() {
@@ -15,12 +15,12 @@ function Home() {
         {/* <ThemeToggle /> */}
         <Navbar />
         <Hero />
-        {/* <Skills /> */}
-        {/* <ProjectsSection /> */}
+        <Skills />
+        <ProjectsSection />
+        <Certifications />
         {/* <AboutSection /> */}
-        {/* <Certifications /> */}
-        {/* <ContactSection /> */}
-        {/* <Footer /> */}
+        <ContactSection />
+        <Footer />
         
     </div>
   )

@@ -28,7 +28,8 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  /* background: var(--bg-secondary); */
+  
 }
 
 ::-webkit-scrollbar-thumb {
